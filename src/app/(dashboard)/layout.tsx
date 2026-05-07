@@ -1,0 +1,32 @@
+import React from 'react';
+import Sidebar from '@/components/dashboard/sidebar';
+import Navbar from '@/components/dashboard/navbar';
+import StoreProvider from '@/lib/redux/provider';
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <StoreProvider>
+      <div className="flex min-h-screen bg-background">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Main Content Area */}
+        <div className="flex flex-1 flex-col overflow-hidden">
+          {/* Navbar */}
+          <Navbar />
+
+          {/* Page Content */}
+          <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-8">
+            <div className="mx-auto max-w-7xl animate-in fade-in duration-700">
+              {children}
+            </div>
+          </main>
+        </div>
+      </div>
+    </StoreProvider>
+  );
+}
