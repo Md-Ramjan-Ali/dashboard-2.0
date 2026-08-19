@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "@/components/dashboard/sidebar";
-import Navbar from "@/components/dashboard/navbar";
+import Sidebar from "@/components/layout/sidebar";
+import Navbar from "@/components/layout/navbar";
 
 export default function DashboardLayout({
   children,
@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-[#FAF7F6] dark:bg-[#171414]">
       {/* Sidebar */}
       <Sidebar />
 
@@ -19,7 +19,7 @@ export default function DashboardLayout({
 
         {/* Page Content */}
         <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-8">
-          <div className="animate-in fade-in duration-700">{children}</div>
+          <div className="animate-in fade-in duration-500">{children}</div>
         </main>
       </div>
     </div>

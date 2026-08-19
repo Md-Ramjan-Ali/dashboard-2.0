@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DashboardState {
   isSidebarOpen: boolean;
@@ -6,12 +6,12 @@ interface DashboardState {
 }
 
 const initialState: DashboardState = {
-  isSidebarOpen: true,
-  activeTab: 'overview',
+  isSidebarOpen: false,
+  activeTab: "overview",
 };
 
 const dashboardSlice = createSlice({
-  name: 'dashboard',
+  name: "dashboard",
   initialState,
   reducers: {
     toggleSidebar: (state) => {
@@ -26,5 +26,6 @@ const dashboardSlice = createSlice({
   },
 });
 
-export const { toggleSidebar, setSidebarOpen, setActiveTab } = dashboardSlice.actions;
+export const { toggleSidebar, setSidebarOpen, setActiveTab } =
+  dashboardSlice.actions;
 export default dashboardSlice.reducer;
